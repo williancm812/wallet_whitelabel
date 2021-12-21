@@ -6,7 +6,6 @@ import 'package:wallet_whitelabel/models/api_response.dart';
 import 'package:wallet_whitelabel/models/boleto_created.dart';
 
 import 'package:wallet_whitelabel/api/api_service.dart';
-// import 'package:wallet_whitelabel/api/api_service.dart';
 
 class BoletoService {
   static final BoletoService _instance = BoletoService.internal();

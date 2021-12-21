@@ -1,6 +1,6 @@
 library wallet_whitelabel;
 import 'package:wallet_whitelabel/common/date_utils.dart';
-import 'package:wallet_whitelabel/common/extensions/string_extension.dart';
+import 'package:wallet_whitelabel/common/string_extension.dart';
 import 'barcode.dart';
 import 'package:flutter/foundation.dart';
 
@@ -35,7 +35,7 @@ extension SegmentExtension on SegmentContaConsumo {
         return 'Carnes e Assemelhados ou demais Empresas';
       case SegmentContaConsumo.FINE:
         return 'Multa de trânsito';
-      case SegmentContaConsumo.UNDEFINED:
+      case SegmentContaConsumo.RESERVED_BANK:
         return 'Indefinido';
       case SegmentContaConsumo.UNDEFINED:
         return 'Uso exclusivo do banco';
@@ -53,11 +53,12 @@ class BarcodeContaConsumo extends BarcodeItem {
   String? bankName;
 
   String get validValue {
-    if (typed!)
+    if (typed!) {
       return rawValue!.substring(0, 11) +
           rawValue!.substring(12, 23) +
           rawValue!.substring(24, 35) +
           rawValue!.substring(36, 47);
+    }
     return rawValue!;
   }
 

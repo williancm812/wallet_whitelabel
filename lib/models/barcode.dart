@@ -1,8 +1,8 @@
 library wallet_whitelabel;
 
-import 'package:wallet_whitelabel/common/extensions/string_extension.dart';
-import 'package:wallet_whitelabel/models/barcode/barcode_boleto.dart';
-import 'package:wallet_whitelabel/models/barcode/barcode_conta_consumo.dart';
+import 'package:wallet_whitelabel/common/string_extension.dart';
+import 'package:wallet_whitelabel/models/barcode_boleto.dart';
+import 'package:wallet_whitelabel/models/barcode_conta_consumo.dart';
 
 abstract class BarcodeItem {
   String? rawValue;
