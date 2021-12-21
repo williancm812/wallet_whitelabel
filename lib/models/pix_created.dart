@@ -1,13 +1,7 @@
+library wallet_whitelabel;
+
 import 'package:intl/intl.dart';
 
-
-// {"amount":15000,
-// "brcode":"00020101021226890014br.gov.bcb.pix2567invoice-h.sandbox.starkbank.com/v2/f709f6d9d12d497b9d"
-//      "00fa2861f545855204000053039865802BR5925Br Programas Educacionais6009Sao Paulo62070503***6304E090",
-// "created":1637034389.897605,
-// "due":1637207189.897005,
-// "invoiceCreated":1,
-// "pdf":"https://invoice-h.sandbox.starkbank.com/pdf/f709f6d9d12d497b9d00fa2861f54585"}
 class PixCreated {
   PixCreated();
 

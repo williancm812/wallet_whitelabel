@@ -1,4 +1,4 @@
-// import 'package:wallet_whitelabel/common/navigator_utils.dart';
+library wallet_whitelabel;
 
 class ApiResponse {
   String? errorMessage;

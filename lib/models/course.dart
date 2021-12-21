@@ -1,3 +1,4 @@
+library wallet_whitelabel;
 class Course {
   Course();
 

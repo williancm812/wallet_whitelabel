@@ -1,6 +1,5 @@
-// {"idIndications":3,
-// "image":"https://storage.googleapis.com/rodopay-indications-fil",
-// "uri":"https://sites.google.com/view/prototypeideas",}
+library wallet_whitelabel;
+
 class Indication {
   Indication();
 

@@ -1,3 +1,5 @@
+library wallet_whitelabel;
+
 import 'dart:io';
 
 import 'package:wallet_whitelabel/models/file_app.dart';

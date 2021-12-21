@@ -1,4 +1,4 @@
-// {"code":"406","name":"ACCREDITO SCD S.A."},
+library wallet_whitelabel;
 
 class Contact {
   Contact();

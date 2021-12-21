@@ -1,10 +1,11 @@
+library wallet_whitelabel;
+
 import 'dart:io';
 
-import 'package:wallet_whitelabel/models/tag_enum.dart';
-
-import 'package:wallet_whitelabel/models/api_response.dart';
-import 'package:wallet_whitelabel/api/api_service.dart';
 import 'package:flutter/material.dart';
+import 'package:wallet_whitelabel/api/api_service.dart';
+import 'package:wallet_whitelabel/models/api_response.dart';
+import 'package:wallet_whitelabel/models/tag_enum.dart';
 
 class UploadFileService {
   static final UploadFileService _instance = UploadFileService.internal();

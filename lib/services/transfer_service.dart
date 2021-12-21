@@ -1,3 +1,4 @@
+library wallet_whitelabel;
 
 import 'package:wallet_whitelabel/models/api_response.dart';
 import 'package:wallet_whitelabel/models/boleto_created.dart';

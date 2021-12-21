@@ -1,3 +1,5 @@
+library wallet_whitelabel;
+
 import 'package:flutter/foundation.dart';
 
 enum TagEnum {

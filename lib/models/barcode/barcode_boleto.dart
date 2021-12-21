@@ -1,3 +1,5 @@
+library wallet_whitelabel;
+
 import 'package:wallet_whitelabel/common/date_utils.dart';
 import 'package:wallet_whitelabel/common/extensions/string_extension.dart';
 import 'package:wallet_whitelabel/models/barcode/barcode.dart';

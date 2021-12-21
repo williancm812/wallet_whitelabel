@@ -1,3 +1,4 @@
+library wallet_whitelabel;
 import 'package:intl/intl.dart';
 
 import 'package:jiffy/jiffy.dart';

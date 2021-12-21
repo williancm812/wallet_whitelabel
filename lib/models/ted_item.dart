@@ -1,3 +1,4 @@
+library wallet_whitelabel;
 
 // {"code":"406","name":"ACCREDITO SCD S.A."},
 // {"ispb":"13140088","name":"ACESSO SOLUCOES PAGAMENTO SA"}

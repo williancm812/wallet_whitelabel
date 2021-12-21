@@ -1,3 +1,5 @@
+library wallet_whitelabel;
+
 class BrasilState {
 
   String value;
