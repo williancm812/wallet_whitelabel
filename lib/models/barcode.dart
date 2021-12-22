@@ -1,5 +1,6 @@
 library wallet_whitelabel;
 
+import 'package:flutter/foundation.dart';
 import 'package:wallet_whitelabel/common/string_extension.dart';
 import 'package:wallet_whitelabel/models/barcode_boleto.dart';
 import 'package:wallet_whitelabel/models/barcode_conta_consumo.dart';
@@ -22,7 +23,7 @@ abstract class BarcodeItem {
   String get segmento => getSegment()!.getName;
 
   bool isValid(String value) {
-    if (value == null || value.isEmpty) return false;
+    if (value.isEmpty) return false;
 
     String line = value.onlyNumber;
     return BarcodeBoleto.isValid1(line) || BarcodeContaConsumo.isValid1(line);
@@ -50,7 +51,7 @@ abstract class BarcodeItem {
       }
     }
 
-    print("FORMAT VALUE = > " + format);
+    debugPrint("FORMAT VALUE = > " + format);
     return format;
   }
 }

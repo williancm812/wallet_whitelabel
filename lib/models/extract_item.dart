@@ -1,4 +1,6 @@
 library wallet_whitelabel;
+
+import 'package:flutter/foundation.dart';
 import 'package:intl/intl.dart';
 
 class ExtractItem {
@@ -20,26 +22,26 @@ class ExtractItem {
 
   String get formatDate {
     DateTime dt = DateTime.fromMillisecondsSinceEpoch((created!.toInt() * 1000));
-    dt.subtract(Duration(days: 1));
+    dt.subtract(const Duration(days: 1));
     return DateFormat('dd/MM/yyyy').format(dt);
   }
 
   ExtractItem.fromJson(Map<String, dynamic> json) {
-    // print(json);
-    try{
+    // debugPrint(json);
+    try {
       amount = json['amount'] / 100.0;
-    } catch(e){
-      print('amount');
+    } catch (e) {
+      debugPrint('amount');
     }
-    try{
+    try {
       balance = json['balance'] / 100.0;
-    } catch(e){
-      print('BALANCE');
+    } catch (e) {
+      debugPrint('BALANCE');
     }
-    try{
+    try {
       fee = json['fee'] / 100.0;
-    } catch(e){
-      print('fee');
+    } catch (e) {
+      debugPrint('fee');
     }
     created = json['created'] as num;
     created = created!.toInt();

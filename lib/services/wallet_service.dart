@@ -12,7 +12,7 @@ class WalletService {
 
   WalletService.internal();
 
-  ApiService _apiService = ApiService();
+  final ApiService _apiService = ApiService();
 
   Future<ApiResponse?> wallet({
     @required String? email,
@@ -27,7 +27,7 @@ class WalletService {
         },
       );
 
-      print(response);
+      debugPrint(response.toString());
       //CHECAGEM ERRO
       if (response.containsKey('connection') || response.containsKey('error')) {
         throw Exception("Connection TimeOut");
@@ -37,7 +37,7 @@ class WalletService {
 
       return ApiResponse(response: Wallet.fromJson(response));
     } catch (e) {
-      print(e);
+      debugPrint(e.toString());
       return ApiResponse(errorMessage: 'Ocorreu um erro inesperado');
     }
   }
@@ -56,7 +56,7 @@ class WalletService {
         },
       );
 
-      print(response);
+      debugPrint(response.toString());
       //CHECAGEM ERRO
       if (response.containsKey('connection') || response.containsKey('error')) {
         throw Exception("Connection TimeOut");
@@ -65,7 +65,7 @@ class WalletService {
 
       return ApiResponse(response: response['brcode']);
     } catch (e) {
-      print(e);
+      debugPrint(e.toString());
       return ApiResponse(errorMessage: 'Ocorreu um erro inesperado');
     }
   }
@@ -83,7 +83,7 @@ class WalletService {
         },
       );
 
-      print(response);
+      debugPrint(response.toString());
       //CHECAGEM ERRO
       if (response.containsKey('connection') || response.containsKey('error')) {
         throw Exception("Connection TimeOut");
@@ -93,7 +93,7 @@ class WalletService {
 
       return ApiResponse(response: Balance.fromJson(response));
     } catch (e) {
-      print(e);
+      debugPrint(e.toString());
       return ApiResponse(errorMessage: 'Ocorreu um erro inesperado');
     }
   }

@@ -1,11 +1,9 @@
 library wallet_whitelabel;
 
 import 'package:flutter/material.dart';
-
+import 'package:wallet_whitelabel/api/api_service.dart';
 import 'package:wallet_whitelabel/models/api_response.dart';
 import 'package:wallet_whitelabel/models/boleto_created.dart';
-
-import 'package:wallet_whitelabel/api/api_service.dart';
 
 class BoletoService {
   static final BoletoService _instance = BoletoService.internal();
@@ -14,7 +12,7 @@ class BoletoService {
 
   BoletoService.internal();
 
-  ApiService _apiService = ApiService();
+  final ApiService _apiService = ApiService();
 
   Future<ApiResponse?> createBoleto({
     @required String? email,
@@ -33,7 +31,7 @@ class BoletoService {
         },
       );
 
-      print(response);
+      debugPrint(response.toString());
       //CHECAGEM ERRO
       if (response.containsKey('connection') || response.containsKey('error')) {
         throw Exception("Connection TimeOut");
@@ -45,7 +43,7 @@ class BoletoService {
 
       return ApiResponse(response: BoletoCreated.fromJson(response));
     } catch (e) {
-      print(e);
+      debugPrint(e.toString());
       return ApiResponse(errorMessage: 'Ocorreu um erro inesperado');
     }
   }
@@ -72,7 +70,7 @@ class BoletoService {
         },
       );
 
-      print(response);
+      debugPrint(response.toString());
       //CHECAGEM ERRO
       if (response.containsKey('connection') || response.containsKey('error')) {
         throw Exception("Connection TimeOut");
@@ -95,7 +93,7 @@ class BoletoService {
 
       return ApiResponse(response: response['creationTime']);
     } catch (e) {
-      print(e);
+      debugPrint(e.toString());
       return ApiResponse(errorMessage: 'Ocorreu um erro inesperado');
     }
   }
@@ -120,7 +118,7 @@ class BoletoService {
         },
       );
 
-      print(response);
+      debugPrint(response.toString());
       //CHECAGEM ERRO
       if (response.containsKey('connection') || response.containsKey('error')) {
         throw Exception("Connection TimeOut");
@@ -143,7 +141,7 @@ class BoletoService {
 
       return ApiResponse(response: response['creationTime']);
     } catch (e) {
-      print(e);
+      debugPrint(e.toString());
       return ApiResponse(errorMessage: 'Ocorreu um erro inesperado');
     }
   }

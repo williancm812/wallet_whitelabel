@@ -7,7 +7,7 @@ import 'package:wallet_whitelabel/models/barcode.dart';
 class BarcodeBoleto extends BarcodeItem {
   BarcodeBoleto(String rawValue) {
     this.rawValue = rawValue;
-    if (rawValue == null || rawValue.isEmpty) return;
+    if (rawValue.isEmpty) return;
 
     if (rawValue.length == 44) {
       mask = MASK_SCANNED;

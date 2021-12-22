@@ -14,7 +14,7 @@ class UploadFileService {
 
   UploadFileService.internal();
 
-  ApiService _apiService = ApiService();
+  final ApiService _apiService = ApiService();
 
   Future<ApiResponse?> uploadFile({
     @required File? file,
@@ -35,10 +35,10 @@ class UploadFileService {
 
       if (response.containsKey('auth') || response['auth'] == 0) return ApiResponse(authError: true);
 
-      print(response);
+      debugPrint(response.toString());
       return ApiResponse(response: response['inserted'] == 1);
     } catch (e) {
-      print(e);
+      debugPrint(e.toString());
       return ApiResponse(errorMessage: 'Ocorreu um erro inesperado');
     }
   }

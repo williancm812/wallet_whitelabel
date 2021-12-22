@@ -36,7 +36,7 @@ class PixService {
         },
       );
 
-      print(response);
+      debugPrint(response.toString());
       //CHECAGEM ERRO
       if (response.containsKey('connection') || response.containsKey('error')) {
         throw Exception("Connection TimeOut");
@@ -44,12 +44,13 @@ class PixService {
 
       if (response.containsKey('auth') || response['auth'] == 0) return ApiResponse(authError: true);
 
-      if (response.containsKey('invoiceCreated') && response['invoiceCreated'] == 0)
+      if (response.containsKey('invoiceCreated') && response['invoiceCreated'] == 0) {
         throw Exception("Not Create Receiver Pix");
+      }
 
       return ApiResponse(response: PixCreated.fromJson(response));
     } catch (e) {
-      print(e);
+      debugPrint(e.toString());
       return ApiResponse(errorMessage: 'Ocorreu um erro inesperado');
     }
   }
@@ -71,7 +72,7 @@ class PixService {
         },
       );
 
-      print(response);
+      debugPrint(response.toString());
       //CHECAGEM ERRO
       if (response.containsKey('connection') || response.containsKey('error')) {
         throw Exception("Connection TimeOut");
@@ -79,12 +80,13 @@ class PixService {
 
       if (response.containsKey('auth') || response['auth'] == 0) return ApiResponse(authError: true);
 
-      if (response.containsKey('errorCode'))
+      if (response.containsKey('errorCode')) {
         return ApiResponse(errorMessage: response['errorCode'].toString());
+      }
 
       return ApiResponse(response: BrCodePreview.fromJson(response));
     } catch (e) {
-      print(e);
+      debugPrint(e.toString());
       return ApiResponse(errorMessage: 'Ocorreu um erro inesperado');
     }
   }
@@ -110,7 +112,7 @@ class PixService {
         },
       );
 
-      print(response);
+      debugPrint(response.toString());
       //CHECAGEM ERRO
       if (response.containsKey('connection') || response.containsKey('error')) {
         throw Exception("Connection TimeOut");
@@ -118,12 +120,13 @@ class PixService {
 
       if (response.containsKey('auth') || response['auth'] == 0) return ApiResponse(authError: true);
 
-      if (response.containsKey('created') && response['created'] == 0)
+      if (response.containsKey('created') && response['created'] == 0) {
         throw Exception("Not Create Receiver Pix");
+      }
 
       return ApiResponse(response: response['creationTime']);
     } catch (e) {
-      print(e);
+      debugPrint(e.toString());
       return ApiResponse(errorMessage: 'Ocorreu um erro inesperado');
     }
   }

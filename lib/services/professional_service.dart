@@ -1,9 +1,9 @@
 library wallet_whitelabel;
 
+import 'package:flutter/material.dart';
+import 'package:wallet_whitelabel/api/api_service.dart';
 import 'package:wallet_whitelabel/models/api_response.dart';
 import 'package:wallet_whitelabel/models/user.dart';
-import 'package:wallet_whitelabel/api/api_service.dart';
-import 'package:flutter/material.dart';
 
 class ProfessionalService {
   static final ProfessionalService _instance = ProfessionalService.internal();
@@ -12,7 +12,7 @@ class ProfessionalService {
 
   ProfessionalService.internal();
 
-  ApiService _apiService = ApiService();
+  final ApiService _apiService = ApiService();
 
   Future<ApiResponse?> getInfo({
     @required String? email,
@@ -27,7 +27,7 @@ class ProfessionalService {
         },
       );
 
-      print(response);
+      debugPrint(response.toString());
       //CHECAGEM ERRO
       if (response.containsKey('connection') || response.containsKey('error')) {
         throw Exception("Connection TimeOut");
@@ -41,14 +41,13 @@ class ProfessionalService {
 
       return ApiResponse(response: object!);
     } catch (e) {
-      print(e);
+      debugPrint(e.toString());
       return ApiResponse(errorMessage: 'Ocorreu um erro inesperado');
     }
   }
 
   Future<ApiResponse?> update({@required User? user}) async {
     try {
-
       Map<String, dynamic> response = await _apiService.put(
         query: '/professional/update',
         body: user!.toJson(),
@@ -57,7 +56,7 @@ class ProfessionalService {
           'token': user.token,
         },
       );
-      print(response);
+      debugPrint(response.toString());
 
       //CHECAGEM ERRO
       if (response.containsKey('connection') || response.containsKey('error')) {
@@ -70,7 +69,7 @@ class ProfessionalService {
 
       return ApiResponse(response: response['result'] == 1);
     } catch (e) {
-      print(e);
+      debugPrint(e.toString());
       return ApiResponse(errorMessage: 'Ocorreu um erro inesperado');
     }
   }
@@ -92,7 +91,7 @@ class ProfessionalService {
         },
       );
 
-      print(response);
+      debugPrint(response.toString());
       //CHECAGEM ERRO
       if (response.containsKey('connection') || response.containsKey('error')) {
         throw Exception("Connection TimeOut");
@@ -102,7 +101,7 @@ class ProfessionalService {
 
       return ApiResponse(response: response['valid'] == 1);
     } catch (e) {
-      print(e);
+      debugPrint(e.toString());
       return ApiResponse(errorMessage: 'Ocorreu um erro inesperado');
     }
   }
@@ -125,7 +124,7 @@ class ProfessionalService {
         },
       );
 
-      print(response);
+      debugPrint(response.toString());
       //CHECAGEM ERRO
       if (response.containsKey('connection') || response.containsKey('error')) {
         throw Exception("Connection TimeOut");
@@ -135,7 +134,7 @@ class ProfessionalService {
 
       return ApiResponse(response: response['passwordChanged'] == 1);
     } catch (e) {
-      print(e);
+      debugPrint(e.toString());
       return ApiResponse(errorMessage: 'Ocorreu um erro inesperado');
     }
   }
@@ -152,7 +151,7 @@ class ProfessionalService {
         },
       );
 
-      print(response);
+      debugPrint(response.toString());
       //CHECAGEM ERRO
       if (response.containsKey('connection') || response.containsKey('error')) {
         throw Exception("Connection TimeOut");
@@ -162,7 +161,7 @@ class ProfessionalService {
 
       return ApiResponse(response: response['emailSent']);
     } catch (e) {
-      print(e);
+      debugPrint(e.toString());
       return ApiResponse(errorMessage: 'Ocorreu um erro inesperado');
     }
   }
@@ -180,7 +179,7 @@ class ProfessionalService {
         },
       );
 
-      print(response);
+      debugPrint(response.toString());
       //CHECAGEM ERRO
       if (response.containsKey('connection') || response.containsKey('error')) {
         throw Exception("Connection TimeOut");
@@ -192,7 +191,7 @@ class ProfessionalService {
 
       return ApiResponse(response: response['codeIsValid'] == 1);
     } catch (e) {
-      print(e);
+      debugPrint(e.toString());
       return ApiResponse(errorMessage: 'Ocorreu um erro inesperado');
     }
   }
@@ -212,7 +211,7 @@ class ProfessionalService {
         },
       );
 
-      print(response);
+      debugPrint(response.toString());
 
       if (response.containsKey('connection') || response.containsKey('error')) {
         throw Exception("Connection TimeOut");
@@ -224,7 +223,7 @@ class ProfessionalService {
 
       return ApiResponse(response: response['passwordChanged'] == 1);
     } catch (e) {
-      print(e);
+      debugPrint(e.toString());
       return ApiResponse(errorMessage: 'Ocorreu um erro inesperado');
     }
   }

@@ -1,8 +1,10 @@
 library wallet_whitelabel;
+
+import 'package:flutter/foundation.dart';
 import 'package:wallet_whitelabel/common/date_utils.dart';
 import 'package:wallet_whitelabel/common/string_extension.dart';
+
 import 'barcode.dart';
-import 'package:flutter/foundation.dart';
 
 enum SegmentContaConsumo {
   CITY_HALL,
@@ -63,14 +65,14 @@ class BarcodeContaConsumo extends BarcodeItem {
   }
 
   BarcodeContaConsumo(this.rawValue) {
-    print('CALL');
+    debugPrint('CALL');
     if (rawValue == null || rawValue!.isEmpty) return;
 
     if (rawValue!.length == 44) {
       mask = MASK_SCANNED;
       typed = false;
     } else if (rawValue!.length == 48) {
-      print('MASK TYPED $rawValue');
+      debugPrint('MASK TYPED $rawValue');
       mask = MASK_TYPED;
       typed = true;
     }
@@ -84,7 +86,7 @@ class BarcodeContaConsumo extends BarcodeItem {
 
   @override
   SegmentContaConsumo getSegment() {
-    int ndx = this.getSegmentIndex;
+    int ndx = getSegmentIndex;
 
     if (ndx < 1) ndx = 8;
 
@@ -95,12 +97,10 @@ class BarcodeContaConsumo extends BarcodeItem {
   num get getAmount => num.parse(validValue.substring(4, 15)) / 100;
 
   DateTime? _testDueDate(String str) {
-    print(str);
     int year = int.parse(str.substring(0, 4));
 
     int _testValue = (year - DateTime.now().year);
     _testValue = _testValue < 0 ? _testValue * -1 : _testValue;
-    print(_testValue);
     if (_testValue > 5) return null;
 
     int month = int.parse(str.substring(4, 6));
@@ -137,6 +137,9 @@ class BarcodeContaConsumo extends BarcodeItem {
 
   @override
   String toString() {
-    return 'BarcodeContaConsumo{rawValue: $rawValue, mask: $mask, typed: $typed, bankName: $bankName, MASK_TYPED: $MASK_TYPED, MASK_SCANNED: $MASK_SCANNED}';
+    return 'BarcodeContaConsumo{rawValue: $rawValue, mask: $mask, typed: $typed,'
+        ' bankName: $bankName,'
+        ' MASK_TYPED: $MASK_TYPED,'
+        ' MASK_SCANNED: $MASK_SCANNED}';
   }
 }

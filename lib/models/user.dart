@@ -27,25 +27,24 @@ class User {
   int? passwordAndProfessionalLinked;
 
   void copy(User u) {
-    this.email = u.email ?? this.email;
-    this.password = u.password ?? this.password;
-    this.name = u.name ?? this.name;
-    this.active = u.active ?? this.active;
-    this.cpf = u.cpf ?? this.cpf;
-    this.code = u.code ?? this.code;
-    this.address = u.address ?? this.address;
-    this.addressNumber = u.addressNumber ?? this.addressNumber;
-    this.district = u.district ?? this.district;
-    this.complement = u.complement ?? this.complement;
-    this.city = u.city ?? this.city;
-    this.state = u.state ?? this.state;
-    this.loggedIn = u.loggedIn ?? this.loggedIn;
-    this.token = u.token ?? this.token;
-    this.idPerson = u.idPerson ?? this.idPerson;
-    this.idProfessional = u.idProfessional ?? this.idProfessional;
-    this.profileUrl = u.profileUrl ?? this.profileUrl;
-    this.passwordAndProfessionalLinked =
-        u.passwordAndProfessionalLinked ?? this.passwordAndProfessionalLinked;
+    email = u.email ?? email;
+    password = u.password ?? password;
+    name = u.name ?? name;
+    active = u.active ?? active;
+    cpf = u.cpf ?? cpf;
+    code = u.code ?? code;
+    address = u.address ?? address;
+    addressNumber = u.addressNumber ?? addressNumber;
+    district = u.district ?? district;
+    complement = u.complement ?? complement;
+    city = u.city ?? city;
+    state = u.state ?? state;
+    loggedIn = u.loggedIn ?? loggedIn;
+    token = u.token ?? token;
+    idPerson = u.idPerson ?? idPerson;
+    idProfessional = u.idProfessional ?? idProfessional;
+    profileUrl = u.profileUrl ?? profileUrl;
+    passwordAndProfessionalLinked = u.passwordAndProfessionalLinked ?? passwordAndProfessionalLinked;
   }
 
   User.fromLogin(Map<String, dynamic> json) {

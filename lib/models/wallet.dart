@@ -22,9 +22,9 @@ class Wallet {
 
       String finalText = '';
       ws.chunked(4).forEach((element) {
-        element.forEach((e) {
+        for (var e in element) {
           finalText += e;
-        });
+        }
         finalText += '-';
       });
       return finalText.substring(0, 19);
@@ -74,7 +74,7 @@ class Balance {
   num? updated;
 
   Balance.fromJson(Map<String, dynamic> json) {
-    //TODO: amount e cash difidir por 100
+    /// amount e cash dividir por 100
     amount = json['amount'] / 100;
     cashbackAmount = json['cashbackAmount'] / 100;
     currency = json['currency'];
@@ -85,6 +85,7 @@ class Balance {
 
   @override
   String toString() {
-    return 'Balance{amount: $amount, cashbackAmount: $cashbackAmount, currency: $currency, id: $id, result: $result, updated: $updated}';
+    return 'Balance{amount: $amount, cashbackAmount: $cashbackAmount,'
+        ' currency: $currency, id: $id, result: $result, updated: $updated}';
   }
 }

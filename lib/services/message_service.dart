@@ -1,10 +1,9 @@
 library wallet_whitelabel;
 
+import 'package:flutter/material.dart';
+import 'package:wallet_whitelabel/api/api_service.dart';
 import 'package:wallet_whitelabel/models/api_response.dart';
 import 'package:wallet_whitelabel/models/message.dart';
-import 'package:wallet_whitelabel/models/user.dart';
-import 'package:wallet_whitelabel/api/api_service.dart';
-import 'package:flutter/material.dart';
 
 class MessageService {
   static final MessageService _instance = MessageService.internal();
@@ -13,7 +12,7 @@ class MessageService {
 
   MessageService.internal();
 
-  ApiService _apiService = ApiService();
+  final ApiService _apiService = ApiService();
 
   Future<ApiResponse?> search({
     @required String? email,
@@ -28,21 +27,20 @@ class MessageService {
         },
       );
 
-      print(response);
+      debugPrint(response.toString());
 
       ///CHECAGEM ERRO
       if (response.containsKey('connection') || response.containsKey('error')) {
         throw Exception("Connection TimeOut");
       }
 
-      if (response.containsKey('auth') || response['auth'] == 0)
-        return ApiResponse(authError: true);
+      if (response.containsKey('auth') || response['auth'] == 0) return ApiResponse(authError: true);
 
       List<Message> items = (response['data'] as List).map((e) => Message.fromJson(e)).toList();
 
       return ApiResponse(response: items);
     } catch (e) {
-      print(e);
+      debugPrint(e.toString());
       return ApiResponse(errorMessage: 'Ocorreu um erro inesperado');
     }
   }
@@ -64,22 +62,22 @@ class MessageService {
         },
       );
 
-      print(response);
+      debugPrint(response.toString());
 
       ///CHECAGEM ERRO
       if (response.containsKey('connection') || response.containsKey('error')) {
         throw Exception("Connection TimeOut");
       }
 
-      if (response.containsKey('auth') || response['auth'] == 0)
-        return ApiResponse(authError: true);
+      if (response.containsKey('auth') || response['auth'] == 0) return ApiResponse(authError: true);
 
-      if (response.containsKey('updated') && response['updated'] == 0)
+      if (response.containsKey('updated') && response['updated'] == 0) {
         throw Exception("Not Create Receiver Pix");
+      }
 
       return ApiResponse(response: response['updated'] == 1);
     } catch (e) {
-      print(e);
+      debugPrint(e.toString());
       return ApiResponse(errorMessage: 'Ocorreu um erro inesperado');
     }
   }

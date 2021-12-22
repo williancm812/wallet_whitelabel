@@ -1,9 +1,9 @@
 library wallet_whitelabel;
 
+import 'package:flutter/material.dart';
+import 'package:wallet_whitelabel/api/api_service.dart';
 import 'package:wallet_whitelabel/models/api_response.dart';
 import 'package:wallet_whitelabel/models/user.dart';
-import 'package:wallet_whitelabel/api/api_service.dart';
-import 'package:flutter/material.dart';
 
 class LoginService {
   static final LoginService _instance = LoginService.internal();
@@ -12,7 +12,7 @@ class LoginService {
 
   LoginService.internal();
 
-  ApiService _apiService = ApiService();
+  final ApiService _apiService = ApiService();
 
   Future<ApiResponse?> login({@required String? email, @required String? password}) async {
     try {
@@ -24,22 +24,22 @@ class LoginService {
         },
       );
 
-      print(response);
+      debugPrint(response.toString());
 
       //CHECAGEM ERRO
-      if(response.containsKey('connection') || response.containsKey('error')){
-          throw Exception("Connection TimeOut");
+      if (response.containsKey('connection') || response.containsKey('error')) {
+        throw Exception("Connection TimeOut");
       }
 
       //CHECAGEM DE AUTENTICAÇÃO
-      if(response['loggedIn'] == 0) throw Exception("User Not Autheticated");
+      if (response['loggedIn'] == 0) throw Exception("User Not Autheticated");
 
       User u = User.fromLogin(response);
       u.email = email;
       // u.password = password;
       return ApiResponse(response: u);
     } catch (e) {
-      print(e);
+      debugPrint(e.toString());
       return ApiResponse(errorMessage: 'Ocorreu um erro inesperado');
     }
   }
@@ -54,22 +54,22 @@ class LoginService {
         },
       );
 
-      print(response);
+      debugPrint(response.toString());
 
       //CHECAGEM ERRO
-      if(response.containsKey('connection') || response.containsKey('error')){
-          throw Exception("Connection TimeOut");
+      if (response.containsKey('connection') || response.containsKey('error')) {
+        throw Exception("Connection TimeOut");
       }
 
       //CHECAGEM DE AUTENTICAÇÃO
-      if(response['loggedIn'] == 0) throw Exception("User Not Autheticated");
+      if (response['loggedIn'] == 0) throw Exception("User Not Autheticated");
 
       User u = User.fromLogin(response);
       u.email = email;
       // u.password = password;
       return ApiResponse(response: u);
     } catch (e) {
-      print(e);
+      debugPrint(e.toString());
       return ApiResponse(errorMessage: 'Ocorreu um erro inesperado');
     }
   }

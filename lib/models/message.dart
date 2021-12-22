@@ -14,5 +14,4 @@ class Message {
     message = json['message'];
     messageRead = json['messageRead'];
   }
-
 }

@@ -1,10 +1,9 @@
 library wallet_whitelabel;
 
+import 'package:flutter/material.dart';
+import 'package:wallet_whitelabel/api/api_service.dart';
 import 'package:wallet_whitelabel/models/api_response.dart';
 import 'package:wallet_whitelabel/models/extract_item.dart';
-import 'package:wallet_whitelabel/models/wallet.dart';
-import 'package:wallet_whitelabel/api/api_service.dart';
-import 'package:flutter/material.dart';
 
 class ExtractService {
   static final ExtractService _instance = ExtractService.internal();
@@ -13,7 +12,7 @@ class ExtractService {
 
   ExtractService.internal();
 
-  ApiService _apiService = ApiService();
+  final ApiService _apiService = ApiService();
 
   Future<ApiResponse?> extractList({
     @required String? email,
@@ -28,7 +27,7 @@ class ExtractService {
         },
       );
 
-      print(response);
+      debugPrint(response.toString());
       //CHECAGEM ERRO
       if (response.containsKey('connection') || response.containsKey('error')) {
         throw Exception("Connection TimeOut");
@@ -40,7 +39,7 @@ class ExtractService {
 
       return ApiResponse(response: itens);
     } catch (e) {
-      print(e);
+      debugPrint(e.toString());
       return ApiResponse(errorMessage: 'Ocorreu um erro inesperado');
     }
   }

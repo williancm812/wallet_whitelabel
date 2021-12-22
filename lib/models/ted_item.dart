@@ -5,6 +5,7 @@ library wallet_whitelabel;
 
 class TedItem {
   TedItem();
+
   String? code;
   String? name;
   String? ispb;
