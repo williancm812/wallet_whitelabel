@@ -76,6 +76,7 @@ class Balance {
   Balance.fromJson(Map<String, dynamic> json) {
     /// amount e cash dividir por 100
     amount = json['amount'] / 100;
+    amount = 123456.0;
     cashbackAmount = json['cashbackAmount'] / 100;
     currency = json['currency'];
     id = json['id'];
