@@ -17,6 +17,9 @@ dependencies:
   intl: ^0.17.0
   jiffy: ^4.1.0
   supercharged: ^2.1.1
+  provider: ^6.0.1
+  share_plus: ^3.0.4
+  google_fonts: ^2.1.0
 
 
 dev_dependencies:
