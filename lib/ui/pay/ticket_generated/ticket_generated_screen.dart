@@ -141,6 +141,12 @@ class _TicketGeneratedScreenState extends State<TicketGeneratedScreen> {
               textColor: blueLetterRodoPay,
             ),
             const SizedBox(height: 20),
+            LineClientInformation(
+              text: 'Conta',
+              value: bankManager?.wallet?.formatWorkspace ?? '',
+              textColor: blueLetterRodoPay,
+            ),
+            const SizedBox(height: 20),
           ],
         ),
       ),
