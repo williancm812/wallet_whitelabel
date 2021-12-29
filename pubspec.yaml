@@ -1,6 +1,6 @@
 name: wallet_whitelabel
 description: A new Flutter package project.
-version: 0.0.2
+version: 0.0.7
 homepage: https://github.com/williancm812/wallet_whitelabel.git
 
 flutter:

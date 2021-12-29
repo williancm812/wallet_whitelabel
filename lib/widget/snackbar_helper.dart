@@ -1,4 +1,4 @@
-library wallet_whitelabel;
+
 
 import 'package:flutter/material.dart';
 

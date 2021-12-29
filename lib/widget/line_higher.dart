@@ -1,4 +1,4 @@
-library wallet_whitelabel;
+
 
 import 'package:wallet_whitelabel/common/layouts/colors_utils.dart';
 import 'package:flutter/cupertino.dart';

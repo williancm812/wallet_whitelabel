@@ -1,4 +1,4 @@
-library wallet_whitelabel;
+
 
 class BrCodePreview {
   BrCodePreview();

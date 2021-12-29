@@ -1,4 +1,4 @@
-library wallet_whitelabel;
+
 
 import 'dart:async';
 import 'dart:convert';

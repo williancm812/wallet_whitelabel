@@ -1,8 +1,6 @@
-library wallet_whitelabel;
-
 import 'package:flutter/material.dart';
-import 'package:wallet_whitelabel/api/api_service.dart';
 import 'package:wallet_whitelabel/models/api_response.dart';
+import 'package:wallet_whitelabel/services/api/api_service.dart';
 
 class TransferService {
   static final TransferService _instance = TransferService.internal();

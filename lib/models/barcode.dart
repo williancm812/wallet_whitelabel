@@ -1,4 +1,4 @@
-library wallet_whitelabel;
+
 
 import 'package:flutter/foundation.dart';
 import 'package:wallet_whitelabel/common/string_extension.dart';

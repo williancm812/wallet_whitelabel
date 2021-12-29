@@ -1,5 +1,5 @@
 
-library wallet_whitelabel;
+
 import 'package:flutter/material.dart';
 
 isLoading(BuildContext context, {bool canPop = false}) {
