@@ -1,10 +1,9 @@
-library wallet_whitelabel;
-
 import 'package:flutter/foundation.dart';
 
 enum TagEnum {
   others,
-  lifeProof,
+  lifeProofFront,
+  lifeProofBack,
   boleto,
   profile,
 }
@@ -16,8 +15,10 @@ extension TagEnumExtension on TagEnum {
     switch (this) {
       case TagEnum.others:
         return 'others';
-      case TagEnum.lifeProof:
+      case TagEnum.lifeProofFront:
         return 'life_proof';
+      case TagEnum.lifeProofBack:
+        return 'life_proof_back';
       case TagEnum.boleto:
         return 'march_receipt_tag';
       case TagEnum.profile:

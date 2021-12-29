@@ -33,8 +33,8 @@ class UserManager extends ChangeNotifier {
   Course? course;
 
   dynamic _perfilPicture;
-  dynamic _boleto;
-  dynamic _provaDeVida;
+  dynamic _provaDeVidaFront;
+  dynamic _provaDeVidaBack;
 
   bool get hasNewNotifications => messages.any((e) => !(e.messageRead ?? true));
 
@@ -251,18 +251,18 @@ class UserManager extends ChangeNotifier {
     List<FileApp> files = aux.response as List<FileApp>;
 
     try {
-      _provaDeVida = files
+      _provaDeVidaFront = files
           .firstWhere(
-            (element) => element.tag == TagEnum.lifeProof.getName,
-          )
+            (element) => element.tag == TagEnum.lifeProofFront.getName,
+      )
           .externalUrl;
     } catch (e) {}
 
     try {
-      _boleto = files
+      _provaDeVidaBack = files
           .firstWhere(
-            (element) => element.tag == TagEnum.boleto.getName,
-          )
+            (element) => element.tag == TagEnum.lifeProofBack.getName,
+      )
           .externalUrl;
     } catch (e) {}
 
@@ -270,7 +270,7 @@ class UserManager extends ChangeNotifier {
       _perfilPicture = files
           .firstWhere(
             (element) => element.tag == TagEnum.profile.getName,
-          )
+      )
           .externalUrl;
     } catch (e) {}
   }
@@ -281,7 +281,7 @@ class UserManager extends ChangeNotifier {
       tag: tag,
       email: email ?? user!.email,
     );
-    debugPrint('GERE $aux');
+
     if (!(aux!.isValid ?? false)) {
       return aux.errorMessage;
     } else if (!aux.response) {
@@ -331,17 +331,17 @@ class UserManager extends ChangeNotifier {
     notifyListeners();
   }
 
-  dynamic get boleto => _boleto;
+  dynamic get provaDeVidaBack => _provaDeVidaBack;
 
-  set boleto(dynamic value) {
-    _boleto = value;
+  set provaDeVidaBack(dynamic value) {
+    _provaDeVidaBack = value;
     notifyListeners();
   }
 
-  dynamic get provaDeVida => _provaDeVida;
+  dynamic get provaDeVida => _provaDeVidaFront;
 
   set provaDeVida(dynamic value) {
-    _provaDeVida = value;
+    _provaDeVidaFront = value;
     notifyListeners();
   }
 
@@ -351,7 +351,7 @@ class UserManager extends ChangeNotifier {
     course = null;
     messages = [];
     _perfilPicture = null;
-    _boleto = null;
-    _provaDeVida = null;
+    _provaDeVidaBack = null;
+    _provaDeVidaFront = null;
   }
 }

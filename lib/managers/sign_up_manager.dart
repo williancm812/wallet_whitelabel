@@ -18,15 +18,14 @@ class SignUpManager extends ChangeNotifier {
   final UploadFileService _uploadFileService = UploadFileService();
   final ProfessionalService _professionalService = ProfessionalService();
   final FileService _fileService = FileService();
-
   User? user = User();
   Course? course = Course();
 
   String? tokenSocialNetwork;
 
   dynamic _perfilPicture;
-  dynamic _boleto;
-  dynamic _provaDeVida;
+  dynamic _provaDeVidaBack;
+  dynamic _provaDeVidaFront;
 
   int? expirationMilliseconds;
 
@@ -57,6 +56,7 @@ class SignUpManager extends ChangeNotifier {
 
   Future<String?> registerUser() async {
     ApiResponse? aux = await _signUpService.newRegister(user: user!);
+
     if (aux!.isValid ?? false) {
       user = aux.response as User;
       notifyListeners();
@@ -67,7 +67,7 @@ class SignUpManager extends ChangeNotifier {
 
   Future<String?> registerSocialNetworkUser() async {
     ApiResponse? aux = await _signUpService.newSocialNetworkRegister(user: user!, token: tokenSocialNetwork);
-    
+
     if (aux!.isValid ?? false) {
       user = aux.response as User;
       notifyListeners();
@@ -88,7 +88,7 @@ class SignUpManager extends ChangeNotifier {
 
   Future<String?> verifyRegisterCode() async {
     ApiResponse? aux = await _signUpService.verifyCode(email: user!.email, code: user!.code);
-    
+
     if (aux!.isValid ?? false) {
       if (!aux.response) {
         return 'Código inválido';
@@ -110,18 +110,18 @@ class SignUpManager extends ChangeNotifier {
       List<FileApp> files = aux.response as List<FileApp>;
 
       try {
-        _provaDeVida = files
+        _provaDeVidaFront = files
             .firstWhere(
-              (element) => element.tag == TagEnum.lifeProof.getName,
-            )
+              (element) => element.tag == TagEnum.lifeProofFront.getName,
+        )
             .externalUrl;
       } catch (e) {}
 
       try {
-        _boleto = files
+        _provaDeVidaBack = files
             .firstWhere(
-              (element) => element.tag == TagEnum.boleto.getName,
-            )
+              (element) => element.tag == TagEnum.lifeProofBack.getName,
+        )
             .externalUrl;
       } catch (e) {}
 
@@ -129,7 +129,7 @@ class SignUpManager extends ChangeNotifier {
         _perfilPicture = files
             .firstWhere(
               (element) => element.tag == TagEnum.profile.getName,
-            )
+        )
             .externalUrl;
       } catch (e) {}
     } catch (e) {}
@@ -162,7 +162,8 @@ class SignUpManager extends ChangeNotifier {
   Future<String?> verifyNewPasswordCode({
     @required String? code,
   }) async {
-    user!.code = code;
+
+    user!.code= code;
     ApiResponse? aux = await _professionalService.verifyNewPasswordCode(
       email: user!.email,
       code: code!,
@@ -200,17 +201,17 @@ class SignUpManager extends ChangeNotifier {
     notifyListeners();
   }
 
-  dynamic get boleto => _boleto;
+  dynamic get provaDeVidaBack => _provaDeVidaBack;
 
-  set boleto(dynamic value) {
-    _boleto = value;
+  set provaDeVidaBack(dynamic value) {
+    _provaDeVidaBack = value;
     notifyListeners();
   }
 
-  dynamic get provaDeVida => _provaDeVida;
+  dynamic get provaDeVida => _provaDeVidaFront;
 
   set provaDeVida(dynamic value) {
-    _provaDeVida = value;
+    _provaDeVidaFront = value;
     notifyListeners();
   }
 }
