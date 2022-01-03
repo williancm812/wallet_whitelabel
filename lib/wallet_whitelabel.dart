@@ -1,6 +1,10 @@
 library wallet_whitelabel;
 
 export 'ui/pay/ticket_generated/ticket_generated_screen.dart';
+export 'ui/receive/deposit_ted/deposit_ted_screen.dart';
+export 'ui/receive/generate_ticket/generate_ticket_screen.dart';
+
+
 
 export 'common/date_utils.dart';
 export 'common/formatter_utils.dart';
