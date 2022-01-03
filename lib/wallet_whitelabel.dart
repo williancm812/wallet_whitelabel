@@ -6,9 +6,9 @@ export 'common/date_utils.dart';
 export 'common/formatter_utils.dart';
 export 'common/num_extension.dart';
 export 'common/string_extension.dart';
-export 'common/layouts/colors_utils.dart';
 export 'common/layouts/size_utils.dart';
 
+export 'managers/app_controller.dart';
 export 'managers/bank_manager.dart';
 export 'managers/pay_manager.dart';
 export 'managers/pix_manager.dart';

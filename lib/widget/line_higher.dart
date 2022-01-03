@@ -1,13 +1,13 @@
 
 
-import 'package:wallet_whitelabel/common/layouts/colors_utils.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:wallet_whitelabel/managers/app_controller.dart';
 
 class LineHigher extends StatelessWidget {
   final String? text;
-  final Color? textColor;
+  Color? textColor;
   final String? image;
   final Color? imageColor;
   final double? textSize;
@@ -16,14 +16,14 @@ class LineHigher extends StatelessWidget {
   final VoidCallback? onFinalTap;
   final VoidCallback? onPrimaryTap;
   final Color? finalIconColor;
-  final Color? backgroundLineHigher;
-  final Color? containerColor;
+  Color? backgroundLineHigher;
+  Color? containerColor;
 
 
-  const LineHigher({
+  LineHigher({
     Key? key,
     this.text = 'Crie sua conta',
-    this.textColor = lineHigherTextColor,
+    this.textColor,
     this.icon = Icons.arrow_back_ios,
     this.imageColor,
     this.textSize = 22,
@@ -32,12 +32,16 @@ class LineHigher extends StatelessWidget {
     this.onFinalTap,
     this.onPrimaryTap,
     this.finalIconColor = Colors.white,
-    this.backgroundLineHigher = lineHigherColor,
-    this.containerColor = secondPrincipalColor,
+    this.backgroundLineHigher,
+    this.containerColor,
 
 
 
-  }) : super(key: key);
+  }) : super(key: key){
+   textColor ??= AppController().lineHigherTextColor;
+   backgroundLineHigher ??= AppController().lineHigherColor;
+   containerColor ??= AppController().secondPrincipalColor;
+  }
 
   @override
   Widget build(BuildContext context) {

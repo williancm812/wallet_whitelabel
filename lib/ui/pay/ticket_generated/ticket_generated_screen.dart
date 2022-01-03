@@ -1,11 +1,9 @@
-
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'package:wallet_whitelabel/common/layouts/colors_utils.dart';
 import 'package:wallet_whitelabel/common/layouts/size_utils.dart';
+import 'package:wallet_whitelabel/managers/app_controller.dart';
 import 'package:wallet_whitelabel/managers/bank_manager.dart';
 import 'package:wallet_whitelabel/managers/pay_manager.dart';
 import 'package:wallet_whitelabel/models/barcode_conta_consumo.dart';
@@ -35,7 +33,7 @@ class _TicketGeneratedScreenState extends State<TicketGeneratedScreen> {
     bankManager = context.watch<BankManager>();
     return SafeArea(
       child: Scaffold(
-        backgroundColor: backgroundPay,
+        backgroundColor: AppController().backgroundPay,
         body: body(),
       ),
     );
@@ -53,7 +51,7 @@ class _TicketGeneratedScreenState extends State<TicketGeneratedScreen> {
                   icon: Icons.close,
                   finalIcon: Icons.share,
                   backgroundLineHigher: Colors.transparent,
-                  containerColor: backgroundSecondRodoPay,
+                  containerColor: AppController().backgroundSecondRodoPay,
                   finalIconColor: Colors.white,
                   onPrimaryTap: widget.onPrimaryTap,
                   onFinalTap: () => onShareTicketGenerated(context),
@@ -126,25 +124,19 @@ class _TicketGeneratedScreenState extends State<TicketGeneratedScreen> {
             LineClientInformation(
               text: 'Nome',
               value: manager?.user?.name ?? '',
-              textColor: blueLetterRodoPay,
+              textColor: AppController().blueLetterRodoPay,
             ),
             const SizedBox(height: 20),
             LineClientInformation(
               text: 'Agência',
               value: bankManager?.wallet?.branchCode ?? '',
-              textColor: blueLetterRodoPay,
+              textColor: AppController().blueLetterRodoPay,
             ),
             const SizedBox(height: 20),
             LineClientInformation(
               text: 'Conta',
               value: bankManager?.wallet?.formatWorkspace ?? '',
-              textColor: blueLetterRodoPay,
-            ),
-            const SizedBox(height: 20),
-            LineClientInformation(
-              text: 'Conta',
-              value: bankManager?.wallet?.formatWorkspace ?? '',
-              textColor: blueLetterRodoPay,
+              textColor: AppController().blueLetterRodoPay,
             ),
             const SizedBox(height: 20),
           ],
@@ -163,16 +155,16 @@ class _TicketGeneratedScreenState extends State<TicketGeneratedScreen> {
         padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
         child: Column(
           children: [
-            const LineClientInformation(
+            LineClientInformation(
               text: 'Data',
               value: 'Hoje',
-              textColor: blueLetterRodoPay,
+              textColor: AppController().blueLetterRodoPay,
             ),
             const SizedBox(height: 20),
             LineClientInformation(
               text: 'Vencimento',
               value: manager?.barcodeItem?.getDueDate ?? '',
-              textColor: blueLetterRodoPay,
+              textColor: AppController().blueLetterRodoPay,
             ),
             const SizedBox(height: 20),
             LineClientInformation(
@@ -180,13 +172,13 @@ class _TicketGeneratedScreenState extends State<TicketGeneratedScreen> {
               value: manager!.barcodeItem is BarcodeContaConsumo
                   ? manager!.barcodeItem!.getSegment()!.getName
                   : manager!.barcodeItem!.bankName!,
-              textColor: blueLetterRodoPay,
+              textColor: AppController().blueLetterRodoPay,
             ),
             const SizedBox(height: 20),
             LineClientInformation(
               text: 'Código de barras',
               value: manager?.barcodeItem?.format() ?? '',
-              textColor: blueLetterRodoPay,
+              textColor: AppController().blueLetterRodoPay,
             ),
           ],
         ),
