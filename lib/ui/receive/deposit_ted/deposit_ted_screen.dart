@@ -24,7 +24,7 @@ class _DepositTedScreenState extends State<DepositTedScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: AppController().backgroundPay,
+        backgroundColor: AppController().backgroundThird,
         body: body(),
       ),
     );
@@ -37,7 +37,7 @@ class _DepositTedScreenState extends State<DepositTedScreen> {
           text: 'Depósito',
           image: 'assets/images/ic_deposit.svg',
           backgroundLineHigher: Colors.transparent,
-          containerColor: AppController().backgroundSecondRodoPay,
+          containerColor: AppController().backgroundSecond,
           finalIcon: Icons.share,
           icon: Icons.close,
           onPrimaryTap: widget.onPrimaryTap,

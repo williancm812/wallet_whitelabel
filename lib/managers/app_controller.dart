@@ -19,10 +19,10 @@ class AppController {
   Color? colorInput = const Color(0xffFFFFFF);
   Color? containerHomeColor = const Color(0xff002978);
   Color? iconColorBlack = const Color(0xff000000);
-  Color? backgroundRodoPay = const Color(0xffFFFFFF);
-  Color? backgroundSecondRodoPay = const Color(0xff002978);
-  Color? backgroundPay = const Color(0xff1D86A6);
-  Color? blueLetterRodoPay = const Color(0xff1D86A6);
+  Color? backgroundFirst = const Color(0xffFFFFFF);
+  Color? backgroundSecond = const Color(0xff002978);
+  Color? backgroundThird = const Color(0xff1D86A6);
+  Color? letterColor = const Color(0xff1D86A6);
   Color? colorTextInput = const Color(0xff000000);
   Color? textBlack = const Color(0xff000000);
   Color? textWhite = const Color(0xffFFFFFF);

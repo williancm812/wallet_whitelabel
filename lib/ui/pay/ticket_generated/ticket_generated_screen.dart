@@ -33,7 +33,7 @@ class _TicketGeneratedScreenState extends State<TicketGeneratedScreen> {
     bankManager = context.watch<BankManager>();
     return SafeArea(
       child: Scaffold(
-        backgroundColor: AppController().backgroundPay,
+        backgroundColor: AppController().backgroundThird,
         body: body(),
       ),
     );
@@ -51,7 +51,7 @@ class _TicketGeneratedScreenState extends State<TicketGeneratedScreen> {
                   icon: Icons.close,
                   finalIcon: Icons.share,
                   backgroundLineHigher: Colors.transparent,
-                  containerColor: AppController().backgroundSecondRodoPay,
+                  containerColor: AppController().backgroundSecond,
                   finalIconColor: Colors.white,
                   onPrimaryTap: widget.onPrimaryTap,
                   onFinalTap: () => onShareTicketGenerated(context),
@@ -124,19 +124,19 @@ class _TicketGeneratedScreenState extends State<TicketGeneratedScreen> {
             LineClientInformation(
               text: 'Nome',
               value: manager?.user?.name ?? '',
-              textColor: AppController().blueLetterRodoPay,
+              textColor: AppController().letterColor,
             ),
             const SizedBox(height: 20),
             LineClientInformation(
               text: 'Agência',
               value: bankManager?.wallet?.branchCode ?? '',
-              textColor: AppController().blueLetterRodoPay,
+              textColor: AppController().letterColor,
             ),
             const SizedBox(height: 20),
             LineClientInformation(
               text: 'Conta',
               value: bankManager?.wallet?.formatWorkspace ?? '',
-              textColor: AppController().blueLetterRodoPay,
+              textColor: AppController().letterColor,
             ),
             const SizedBox(height: 20),
           ],
@@ -158,13 +158,13 @@ class _TicketGeneratedScreenState extends State<TicketGeneratedScreen> {
             LineClientInformation(
               text: 'Data',
               value: 'Hoje',
-              textColor: AppController().blueLetterRodoPay,
+              textColor: AppController().letterColor,
             ),
             const SizedBox(height: 20),
             LineClientInformation(
               text: 'Vencimento',
               value: manager?.barcodeItem?.getDueDate ?? '',
-              textColor: AppController().blueLetterRodoPay,
+              textColor: AppController().letterColor,
             ),
             const SizedBox(height: 20),
             LineClientInformation(
@@ -172,13 +172,13 @@ class _TicketGeneratedScreenState extends State<TicketGeneratedScreen> {
               value: manager!.barcodeItem is BarcodeContaConsumo
                   ? manager!.barcodeItem!.getSegment()!.getName
                   : manager!.barcodeItem!.bankName!,
-              textColor: AppController().blueLetterRodoPay,
+              textColor: AppController().letterColor,
             ),
             const SizedBox(height: 20),
             LineClientInformation(
               text: 'Código de barras',
               value: manager?.barcodeItem?.format() ?? '',
-              textColor: AppController().blueLetterRodoPay,
+              textColor: AppController().letterColor,
             ),
           ],
         ),
