@@ -51,6 +51,7 @@ class _TransferSuccessScreenState extends State<TransferSuccessScreen> {
                 ),
                 SizedBox(height: getHeight(context, 0.098, 80)),
                 textTop(),
+
                 const SizedBox(height: 20),
                 textOrigin(),
                 const SizedBox(height: 10),
