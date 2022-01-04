@@ -1,10 +1,13 @@
 library wallet_whitelabel;
 
 export 'ui/pay/ticket_generated/ticket_generated_screen.dart';
+export 'ui/pix/pay_pix/pay_pix_success/pay_pix_success_screen.dart';
+export 'ui/pix/receive_pix/share_pix/share_pix_screen.dart';
+export 'ui/pix/transfer_pix/transfer_success_pix/transfer_success_pix_screen.dart';
 export 'ui/receive/deposit_ted/deposit_ted_screen.dart';
 export 'ui/receive/generate_ticket/generate_ticket_screen.dart';
-
-
+export 'ui/transfer/transfer_cashEdu/transfer_success/transfer_success_screen.dart';
+export 'ui/transfer/transfer_other_bank/realize_transfer/realize_transfer_screen.dart';
 
 export 'common/date_utils.dart';
 export 'common/formatter_utils.dart';
