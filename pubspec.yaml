@@ -13,6 +13,9 @@ dependencies:
   flutter:
     sdk: flutter
 
+
+  auto_size_text: ^3.0.0
+  qr_flutter: ^4.0.0
   dio: ^4.0.4
   intl: ^0.17.0
   jiffy: ^4.1.0
