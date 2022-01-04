@@ -22,10 +22,10 @@ class AppController {
     @required Color? colorInput,
     @required Color? containerHomeColor,
     @required Color? iconColorBlack,
-    @required Color? backgroundRodoPay,
-    @required Color? backgroundSecondRodoPay,
-    @required Color? backgroundPay,
-    @required Color? blueLetterRodoPay,
+    @required Color? backgroundFirst,
+    @required Color? backgroundSecond,
+    @required Color? backgroundThird,
+    @required Color? letterColor,
     @required Color? colorTextInput,
     @required Color? textBlack,
     @required Color? textWhite,
@@ -42,10 +42,10 @@ class AppController {
     this.colorInput = colorInput;
     this.containerHomeColor = containerHomeColor;
     this.iconColorBlack = iconColorBlack;
-    this.backgroundRodoPay = backgroundRodoPay;
-    this.backgroundSecondRodoPay = backgroundSecondRodoPay;
-    this.backgroundPay = backgroundPay;
-    this.blueLetterRodoPay = blueLetterRodoPay;
+    this.backgroundRodoPay = backgroundFirst;
+    this.backgroundSecondRodoPay = backgroundSecond;
+    this.backgroundPay = backgroundThird;
+    this.blueLetterRodoPay = letterColor;
     this.colorTextInput = colorTextInput;
     this.textBlack = textBlack;
     this.textWhite = textWhite;
