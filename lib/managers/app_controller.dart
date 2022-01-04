@@ -26,6 +26,7 @@ class AppController {
     @required Color? backgroundSecond,
     @required Color? backgroundThird,
     @required Color? letterColor,
+    @required Color? textColor,
     @required Color? colorTextInput,
     @required Color? textBlack,
     @required Color? textWhite,
@@ -46,6 +47,7 @@ class AppController {
     this.backgroundSecond = backgroundSecond;
     this.backgroundThird = backgroundThird;
     this.letterColor = letterColor;
+    this.textColor = textColor;
     this.colorTextInput = colorTextInput;
     this.textBlack = textBlack;
     this.textWhite = textWhite;
@@ -67,6 +69,7 @@ class AppController {
   Color? backgroundSecond;
   Color? backgroundThird;
   Color? letterColor;
+  Color? textColor;
   Color? colorTextInput;
   Color? textBlack;
   Color? textWhite;
