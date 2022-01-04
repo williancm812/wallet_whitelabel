@@ -37,7 +37,7 @@ class _SharePixScreenState extends State<SharePixScreen> {
 
     return SafeArea(
       child: Scaffold(
-        backgroundColor: AppController().backgroundSecondRodoPay,
+        backgroundColor: AppController().backgroundSecond,
         resizeToAvoidBottomInset: false,
         body: body(),
       ),
@@ -52,7 +52,7 @@ class _SharePixScreenState extends State<SharePixScreen> {
           image: 'assets/images/ic_pix_toolbar.svg',
           icon: Icons.close,
           finalIcon: Icons.share,
-          backgroundLineHigher: AppController().backgroundSecondRodoPay,
+          backgroundLineHigher: AppController().backgroundSecond,
           onPrimaryTap: widget.onPrimaryTap,
           finalIconColor: Colors.white,
           onFinalTap: () => onShareReceiverPix(context),

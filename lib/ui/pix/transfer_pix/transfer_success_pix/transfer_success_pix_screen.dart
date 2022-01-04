@@ -28,7 +28,7 @@ class _TransferSuccessPixScreenState extends State<TransferSuccessPixScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: AppController().backgroundSecondRodoPay,
+        backgroundColor: AppController().backgroundSecond,
         body: body(),
       ),
     );

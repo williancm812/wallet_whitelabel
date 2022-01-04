@@ -26,7 +26,7 @@ class _PayPixSuccessScreenState extends State<PayPixSuccessScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: AppController().backgroundSecondRodoPay,
+        backgroundColor: AppController().backgroundSecond,
         body: body(),
       ),
     );

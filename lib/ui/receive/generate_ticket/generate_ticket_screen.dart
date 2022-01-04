@@ -28,7 +28,7 @@ class _GenerateTicketScreenState extends State<GenerateTicketScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: AppController().backgroundPay,
+        backgroundColor: AppController().backgroundThird,
         body: body(),
       ),
     );
@@ -41,7 +41,7 @@ class _GenerateTicketScreenState extends State<GenerateTicketScreen> {
           text: 'Boleto',
           finalIcon: Icons.share,
           backgroundLineHigher: Colors.transparent,
-          containerColor: AppController().backgroundSecondRodoPay,
+          containerColor: AppController().backgroundSecond,
           icon: Icons.close,
           onPrimaryTap: widget.onPrimaryTap,
           onFinalTap: () {

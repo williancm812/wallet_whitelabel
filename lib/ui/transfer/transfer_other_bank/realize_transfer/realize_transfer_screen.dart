@@ -33,7 +33,7 @@ class _RealizeTransferScreenState extends State<RealizeTransferScreen> {
     bankManager = context.watch<BankManager>();
     return SafeArea(
       child: Scaffold(
-        backgroundColor: AppController().backgroundSecondRodoPay,
+        backgroundColor: AppController().backgroundSecond,
         body: body(),
       ),
     );
