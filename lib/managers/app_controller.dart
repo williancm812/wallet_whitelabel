@@ -1,5 +1,7 @@
 import 'dart:ui';
 
+import 'package:flutter/material.dart';
+
 class AppController {
   static final AppController _instance = AppController.internal();
 
@@ -7,23 +9,65 @@ class AppController {
 
   AppController.internal();
 
-  Color? errorColor = const Color(0xffEB5757);
-  Color? desabilitedColor = const Color(0xffA4ABB3);
-  Color? lineHigherColor = const Color(0xff002978);
-  Color? lineHigherTextColor = const Color(0xffFFFFFF);
-  Color? secondPrincipalColor = const Color(0xff1D86A6);
-  Color? buttonConfig = const Color(0xff00004A);
-  Color? buttonDesabilited = const Color(0xff5DB6D8);
-  Color? lineContainerContactColor = const Color(0xff00004A);
-  Color? lineContactColor = const Color(0xff5DB6D8);
-  Color? colorInput = const Color(0xffFFFFFF);
-  Color? containerHomeColor = const Color(0xff002978);
-  Color? iconColorBlack = const Color(0xff000000);
-  Color? backgroundRodoPay = const Color(0xffFFFFFF);
-  Color? backgroundSecondRodoPay = const Color(0xff002978);
-  Color? backgroundPay = const Color(0xff1D86A6);
-  Color? blueLetterRodoPay = const Color(0xff1D86A6);
-  Color? colorTextInput = const Color(0xff000000);
-  Color? textBlack = const Color(0xff000000);
-  Color? textWhite = const Color(0xffFFFFFF);
+  void initialize({
+    @required Color? errorColor,
+    @required Color? desabilitedColor,
+    @required Color? lineHigherColor,
+    @required Color? lineHigherTextColor,
+    @required Color? secondPrincipalColor,
+    @required Color? buttonConfig,
+    @required Color? buttonDesabilited,
+    @required Color? lineContainerContactColor,
+    @required Color? lineContactColor,
+    @required Color? colorInput,
+    @required Color? containerHomeColor,
+    @required Color? iconColorBlack,
+    @required Color? backgroundRodoPay,
+    @required Color? backgroundSecondRodoPay,
+    @required Color? backgroundPay,
+    @required Color? blueLetterRodoPay,
+    @required Color? colorTextInput,
+    @required Color? textBlack,
+    @required Color? textWhite,
+  }) {
+    this.errorColor = errorColor;
+    this.desabilitedColor = desabilitedColor;
+    this.lineHigherColor = lineHigherColor;
+    this.lineHigherTextColor = lineHigherTextColor;
+    this.secondPrincipalColor = secondPrincipalColor;
+    this.buttonConfig = buttonConfig;
+    this.buttonDesabilited = buttonDesabilited;
+    this.lineContainerContactColor = lineContainerContactColor;
+    this.lineContactColor = lineContactColor;
+    this.colorInput = colorInput;
+    this.containerHomeColor = containerHomeColor;
+    this.iconColorBlack = iconColorBlack;
+    this.backgroundRodoPay = backgroundRodoPay;
+    this.backgroundSecondRodoPay = backgroundSecondRodoPay;
+    this.backgroundPay = backgroundPay;
+    this.blueLetterRodoPay = blueLetterRodoPay;
+    this.colorTextInput = colorTextInput;
+    this.textBlack = textBlack;
+    this.textWhite = textWhite;
+  }
+
+  Color? errorColor;
+  Color? desabilitedColor;
+  Color? lineHigherColor;
+  Color? lineHigherTextColor;
+  Color? secondPrincipalColor;
+  Color? buttonConfig;
+  Color? buttonDesabilited;
+  Color? lineContainerContactColor;
+  Color? lineContactColor;
+  Color? colorInput;
+  Color? containerHomeColor;
+  Color? iconColorBlack;
+  Color? backgroundRodoPay;
+  Color? backgroundSecondRodoPay;
+  Color? backgroundPay;
+  Color? blueLetterRodoPay;
+  Color? colorTextInput;
+  Color? textBlack;
+  Color? textWhite;
 }
