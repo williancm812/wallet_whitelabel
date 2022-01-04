@@ -50,7 +50,7 @@ class _RealizeTransferScreenState extends State<RealizeTransferScreen> {
                   text: 'Transferir',
                   icon: Icons.close,
                   finalIcon: Icons.share,
-                  finalIconColor: Colors.white,
+                  finalIconColor: Colors.black,
                   onPrimaryTap: widget.onPrimaryTap,
                   onFinalTap: () => onShareRealizeTransfer(context),
                 ),

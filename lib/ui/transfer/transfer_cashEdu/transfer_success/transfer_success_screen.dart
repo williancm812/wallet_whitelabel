@@ -45,7 +45,7 @@ class _TransferSuccessScreenState extends State<TransferSuccessScreen> {
                   text: 'Transferir',
                   icon: Icons.close,
                   finalIcon: Icons.share,
-                  finalIconColor: Colors.white,
+                  finalIconColor: Colors.black,
                   onPrimaryTap: widget.onPrimaryTap,
                   onFinalTap: () => onShareTransferSuccess(context),
                 ),

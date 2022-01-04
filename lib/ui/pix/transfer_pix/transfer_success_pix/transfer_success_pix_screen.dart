@@ -45,7 +45,7 @@ class _TransferSuccessPixScreenState extends State<TransferSuccessPixScreen> {
                   text: 'Transferência pix',
                   icon: Icons.close,
                   finalIcon: Icons.share,
-                  finalIconColor: Colors.white,
+                  finalIconColor: Colors.black,
                   onPrimaryTap: widget.onPrimaryTap,
                   onFinalTap: () => onShareTransferPixSuccess(context),
                 ),
