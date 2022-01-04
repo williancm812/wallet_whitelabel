@@ -31,6 +31,7 @@ class AppController {
     @required Color? textWhite,
   }) {
     this.errorColor = errorColor;
+
     this.desabilitedColor = desabilitedColor;
     this.lineHigherColor = lineHigherColor;
     this.lineHigherTextColor = lineHigherTextColor;
